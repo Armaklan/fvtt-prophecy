@@ -8,6 +8,7 @@ import { ItemSheetProphecyArme } from "./item-sheet/arme.js";
 import { ItemSheetProphecyArmure } from "./item-sheet/armure.js";
 import { ItemSheetProphecyObjet } from "./item-sheet/objet.js";
 import { ItemSheetProphecySortilege } from "./item-sheet/sortilege.js";
+import { ActorSheetProphecyPNJ } from "./actor-sheet/pnj.js";
 
 Hooks.once("init", function () {
   console.log(`Prophecy | Initializing Prophecy System`);
@@ -25,6 +26,10 @@ Hooks.once("init", function () {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("prophecy", ActorSheetProphecyPlayerCharacter, {
     types: ["playercharacter", "adversaire"],
+    makeDefault: true,
+  });
+  Actors.registerSheet("prophecy", ActorSheetProphecyPNJ, {
+    types: ["pnj"],
     makeDefault: true,
   });
 

@@ -1,6 +1,6 @@
 {
     "Actor": {
-      "types": ["playercharacter", "adversaire"],
+      "types": ["playercharacter", "adversaire", "pnj"],
       "templates": {
         "base": {
           "description": ""
