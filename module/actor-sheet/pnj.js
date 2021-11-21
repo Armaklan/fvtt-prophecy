@@ -4,7 +4,7 @@ export class ActorSheetProphecyPNJ extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["sheet", "actor"],
+      classes: ["sheet", "actor", "prophecy"],
       template: "systems/fvtt-prophecy/templates/actor/pnj.html",
       width: 850,
       height: 750,

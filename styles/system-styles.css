@@ -1,44 +1,44 @@
-.sheet .scores {
+.sheet.prophecy .scores {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
 }
 
-.sheet .scores label {
+.sheet.prophecy .scores label {
   text-transform: capitalize;
 }
 
-.sheet .scores > li {
+.sheet.prophecy .scores > li {
   display: flex;
 }
 
-.sheet .scores > li > label {
+.sheet.prophecy .scores > li > label {
   flex: 1 1 100%;
 }
 
-.sheet .scores > li > input {
+.sheet.prophecy .scores > li > input {
   width: 4em;
 }
 
-.sheet .attrs-container {
+.sheet.prophecy .attrs-container {
   display: flex;
   max-width: 100%;
 }
 
-.sheet .comps-container {
+.sheet.prophecy .comps-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
 }
 
-.sheet .comps-container > *, .attrs-container > * {
+.sheet.prophecy .comps-container > *, .attrs-container > * {
   width: 25%;
   box-sizing: border-box;
   padding: 0.5em;
 }
 
-.sheet.actor h3 {
+.sheet.prophecy.actor h3 {
   width: 100%;
   text-align: center;
   background-color: #003c1e;
@@ -46,92 +46,92 @@
   text-transform: uppercase;
 }
 
-.sheet.actor form {
+.sheet.prophecy.actor form {
   background-color: white;
   padding: 1em;
 }
 
-.sheet .rollable {
+.sheet.prophecy .rollable {
   cursor: pointer;
   color: #992233;
 }
 
-.sheet .sheet-body .editor {
+.sheet.prophecy .sheet.prophecy-body .editor {
   height: 95%;
 }
 
-.sheet > section > form {
+.sheet.prophecy > section > form {
   display: flex;
   flex-direction: column;
 }
 
-.sheet .sheet-body {
+.sheet.prophecy .sheet.prophecy-body {
   flex: 1 1 100%;
   display: flex;
 }
 
-.sheet .sheet-body > * {
+.sheet.prophecy .sheet.prophecy-body > * {
   flex: 1 1 100%;
 }
 
-.sheet .items-list .item-image img {
+.sheet.prophecy .items-list .item-image img {
   max-width: 32px;
 }
 
-.sheet .items-list {
+.sheet.prophecy .items-list {
   list-style: none;
   padding: 0;
   overflow-y: auto;
   line-height: 30px;
 }
 
-.sheet .items-list .item-header {
+.sheet.prophecy .items-list .item-header {
   font-weight: bold;
 }
 
-.sheet .items-list .item {
+.sheet.prophecy .items-list .item {
   line-height: 24px;
   padding: 3px 0;
 }
 
-.sheet .items-list .item .item-image {
+.sheet.prophecy .items-list .item .item-image {
   flex: 0 0 24px;
 }
 
-.sheet .items-list .item img {
+.sheet.prophecy .items-list .item img {
   display: block;
 }
 
-.sheet .items-list .item:last-child {
+.sheet.prophecy .items-list .item:last-child {
   border-bottom: none;
 }
 
-.sheet .items-list .item .item-list {
+.sheet.prophecy .items-list .item .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.sheet .items-list .item .item-controls {
+.sheet.prophecy .items-list .item .item-controls {
   flex: 0 0 66px;
   justify-content: flex-end;
 }
 
-.sheet .items-list .item .item-controls a {
+.sheet.prophecy .items-list .item .item-controls a {
   flex: 0 0 22px;
   text-align: center;
 }
 
-.sheet .items-list .item-name {
+.sheet.prophecy .items-list .item-name {
   margin: 0;
 }
 
-.sheet .items-list .item-controls {
+.sheet.prophecy .items-list .item-controls {
   flex: 0 0 86px;
   text-align: right;
 }
 
-.sheet .items-list .item .item-summary {
+.sheet.prophecy .items-list .item .item-summary {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
@@ -141,6 +141,6 @@
   border-top: 4px solid #DBD5B0;
 }
 
-.sheet .tab {
+.sheet.prophecy .tab {
     max-width: 100%;;
 }

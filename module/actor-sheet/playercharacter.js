@@ -4,7 +4,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["sheet", "actor"],
+      classes: ["sheet", "actor", "prophecy"],
       template: "systems/fvtt-prophecy/templates/actor/playercharacter.html",
       width: 850,
       height: 750,

@@ -2,7 +2,7 @@ export class ItemSheetProphecyArmure extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["sheet", "item"],
+      classes: ["sheet", "item", "prophecy"],
       template: "systems/fvtt-prophecy/templates/item/armure.html",
       width: 730,
       height: 750,
