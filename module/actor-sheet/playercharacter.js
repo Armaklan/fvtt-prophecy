@@ -51,11 +51,27 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
       .find(".competence-name")
       .click((event) => this.onCompetenceRoll(event));
 
+    html.find(".item-test").on("click", this._onItemTest.bind(this));
     html.find(".item-delete").on("click", this._onItemDelete.bind(this));
     html.find(".item-edit").on("click", this._onItemEdit.bind(this));
     html.find(".item h4.item-name").on("click", (event) => this._onItemSummary(event));
 
     if (!this.isEditable) return;
+  }
+
+  async _onItemTest(event) {
+    console.log("Prophecy | Test item", event);
+    event.preventDefault();
+    const li = event.currentTarget.closest(".item");
+    const dommage = li.dataset.itemDommage;
+    const multiplicateur = li.dataset.itemMultiplicateur;
+
+    const rollFormula = `${dommage}+(@caracteristiques.force.value*${multiplicateur})`;
+    const roll = new Roll(rollFormula, this.actor.data.data);
+    roll.roll().toMessage({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `Dommage`,
+    });
   }
 
   async _onItemDelete(event) {
@@ -98,6 +114,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     }
     li.toggleClass("expanded");
   }
+
 
   async onCaracteristiqueRoll(event) {
     console.log("Prophecy | Roll caracteristique", event);

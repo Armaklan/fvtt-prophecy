@@ -24,7 +24,7 @@ Hooks.once("init", function () {
 
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("prophecy", ActorSheetProphecyPlayerCharacter, {
-    types: ["playercharacter"],
+    types: ["playercharacter", "adversaire"],
     makeDefault: true,
   });
 
@@ -70,8 +70,13 @@ Hooks.on("preCreateItem", function (document, options, userId) {
  * Set the default image for an actor type instead of the mystery man
  **/
 Hooks.on("preCreateActor", function (entity, options, userId) {
-  entity.img = "systems/fvtt-prophecy/icons/" + entity.type + ".png";
+  entity.data.update({
+    img: "systems/fvtt-prophecy/icons/" + entity.type + ".png",
+  })
+
   if (entity.name == "") {
-    entity.name = "New " + entity.type[0].toUpperCase() + entity.type.slice(1);
+    entity.data.update({
+      name: "Nouveau " + entity.type[0].toUpperCase() + entity.type.slice(1),
+    })
   }
 });

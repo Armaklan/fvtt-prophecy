@@ -6,6 +6,8 @@
     <li
         class="item flexrow arme"
         data-item-id="{{item._id}}"
+        data-item-dommage="{{item.data.dommage}}"
+        data-item-multiplicateur="{{item.data.multiplicateurForce}}"
     >
         <div class="item-image"><img
                 src="{{item.img}}"
@@ -14,12 +16,16 @@
         <h4 class="item-name">{{item.name}}</h4>
         <div class="item-controls">
             <a
+                class="item-control item-test"
+                title="Tester"
+            ><i class="fas fa-dice"></i></a>
+            <a
                 class="item-control item-edit"
-                title="{{item.editlabel}}"
+                title="Editer"
             ><i class="fas fa-edit"></i></a>
             <a
                 class="item-control item-delete"
-                title="{{item.deletelabel}}"
+                title="Supprimer"
             ><i class="fas fa-trash"></i></a>
         </div>
     </li>
@@ -41,11 +47,11 @@
         <div class="item-controls">
             <a
                 class="item-control item-edit"
-                title="{{item.editlabel}}"
+                title="Editer"
             ><i class="fas fa-edit"></i></a>
             <a
                 class="item-control item-delete"
-                title="{{item.deletelabel}}"
+                title="Supprimer"
             ><i class="fas fa-trash"></i></a>
         </div>
     </li>
@@ -67,11 +73,11 @@
         <div class="item-controls">
             <a
                 class="item-control item-edit"
-                title="{{item.editlabel}}"
+                title="Editer"
             ><i class="fas fa-edit"></i></a>
             <a
                 class="item-control item-delete"
-                title="{{item.deletelabel}}"
+                title="Supprimer"
             ><i class="fas fa-trash"></i></a>
         </div>
     </li>

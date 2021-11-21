@@ -1,547 +1,553 @@
 {
     "Actor": {
-        "types": ["playercharacter"],
-        "templates": {
-            "base": {
-                "description": ""
-            },
-            "caracs": {
-              "attributs": {
-                "physique": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "mental": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "manuel": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "social": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "secondaire": {
-                "maitrise": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "chance": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "initiative": ""
-              },
-              "caracteristiques": {
-                "force": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "coordination": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "resistance": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "perception": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "intelligence": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "presence": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "volonte": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "empathie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              }
-            },
-            "comps": {
-              "combat": {
-                "armes-articulees": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "armes-contondantes": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "armes-d-hast": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "armes-de-choc": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "armes-de-jet": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "armes-doubles": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "armes-tranchantes": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "bouclier": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "corps-a-corps": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "mouvement": {
-                "acrobatie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "athletisme": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "equitation": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "escalade": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "esquive": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "natation": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "theorie": {
-                "castes": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "conn-de-la-magie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "conn-des-animaux": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "conn-des-dragons": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "geographie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "histoire": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "lois": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "orientation": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "strategie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "pratique": {
-                "alchimie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "astrologie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "cartographie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "estimation": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "herboristerie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "lire-et-ecrire": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "matieres-premieres": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "medecine": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "premiers-soins": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "survie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "vie en cité": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "manuel": {
-                "armes-de-siege": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "artisanat": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "contrefacon": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "discretion": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "pieges": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "pister": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "manipulation": {
-                "armes-a-projectiles": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "attelages": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "deguisement": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "deverrouillage": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "don-artistique": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "faire-les-poches": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "jeu": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "jongler": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "communication": {
-                "baratin": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "conte": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "eloquence": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "marchandage": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "psychologie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "influence": {
-                "art-de-la-scene": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "commandement": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "diplomatie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "dressage": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "intimidation": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "seduction": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              }
-            },
-            "tendances": {
-              "scoreTendances": {
-                "dragon": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 5
-                },
-                "humanisme": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 5
-                },
-                "fatalite": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 5
-                }
-              },
-              "cercleTendances": {
-                "dragon": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 10
-                },
-                "humanisme": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 10
-                },
-                "fatalite": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 10
-                }
-              }
-            },
-            "magie": {
-              "disciplines": {
-                "instinctive": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "invocatoire": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "sorcellerie": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              },
-              "spheres": {
-                "pierre": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "metal": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "cite": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "feu": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "nature": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "vents": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "oceans": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "reves": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                },
-                "ombre": {
-                  "value": 0,
-                  "min": 0,
-                  "max": 20
-                }
-              }
-            },
-            "vie": {
-              "blessures": {
-                "egratignure": {
-                  "label": "Egratignure",
-                  "value": 0,
-                  "min": 0,
-                  "max": 5
-                },
-                "legere": {
-                  "label": "Légère (-1)",
-                  "value": 0,
-                  "min": 0,
-                  "max": 5
-                },
-                "grave": {
-                  "label": "Grave (-3)",
-                  "value": 0,
-                  "min": 0,
-                  "max": 3
-                },
-                "fatale": {
-                  "label": "Fatale (-5)",
-                  "value": 0,
-                  "min": 0,
-                  "max": 2
-                },
-                "mort": {
-                  "label": "Mort",
-                  "value": 0,
-                  "min": 0,
-                  "max": 1
-                }
-              }
-            }
+      "types": ["playercharacter", "adversaire"],
+      "templates": {
+        "base": {
+          "description": ""
         },
-        "playercharacter": {
-            "templates": ["base", "caracs", "comps", "tendances", "magie", "vie"]
+        "caracs": {
+          "attributs": {
+            "physique": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "mental": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "manuel": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "social": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "secondaire": {
+            "maitrise": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "chance": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "initiative": ""
+          },
+          "caracteristiques": {
+            "force": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "coordination": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "resistance": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "perception": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "intelligence": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "presence": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "volonte": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "empathie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          }
+        },
+        "comps": {
+          "combat": {
+            "armes-articulees": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "armes-contondantes": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "armes-d-hast": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "armes-de-choc": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "armes-de-jet": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "armes-doubles": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "armes-tranchantes": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "bouclier": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "corps-a-corps": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "mouvement": {
+            "acrobatie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "athletisme": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "equitation": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "escalade": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "esquive": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "natation": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "theorie": {
+            "castes": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "conn-de-la-magie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "conn-des-animaux": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "conn-des-dragons": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "geographie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "histoire": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "lois": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "orientation": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "strategie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "pratique": {
+            "alchimie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "astrologie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "cartographie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "estimation": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "herboristerie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "lire-et-ecrire": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "matieres-premieres": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "medecine": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "premiers-soins": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "survie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "vie en cité": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "manuel": {
+            "armes-de-siege": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "artisanat": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "contrefacon": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "discretion": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "pieges": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "pister": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "manipulation": {
+            "armes-a-projectiles": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "attelages": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "deguisement": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "deverrouillage": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "don-artistique": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "faire-les-poches": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "jeu": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "jongler": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "communication": {
+            "baratin": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "conte": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "eloquence": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "marchandage": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "psychologie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "influence": {
+            "art-de-la-scene": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "commandement": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "diplomatie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "dressage": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "intimidation": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "seduction": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          }
+        },
+        "tendances": {
+          "scoreTendances": {
+            "dragon": {
+              "value": 0,
+              "min": 0,
+              "max": 5
+            },
+            "humanisme": {
+              "value": 0,
+              "min": 0,
+              "max": 5
+            },
+            "fatalite": {
+              "value": 0,
+              "min": 0,
+              "max": 5
+            }
+          },
+          "cercleTendances": {
+            "dragon": {
+              "value": 0,
+              "min": 0,
+              "max": 10
+            },
+            "humanisme": {
+              "value": 0,
+              "min": 0,
+              "max": 10
+            },
+            "fatalite": {
+              "value": 0,
+              "min": 0,
+              "max": 10
+            }
+          }
+        },
+        "magie": {
+          "disciplines": {
+            "instinctive": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "invocatoire": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "sorcellerie": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          },
+          "spheres": {
+            "pierre": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "metal": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "cite": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "feu": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "nature": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "vents": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "oceans": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "reves": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            },
+            "ombre": {
+              "value": 0,
+              "min": 0,
+              "max": 20
+            }
+          }
+        },
+        "vie": {
+          "blessures": {
+            "egratignure": {
+              "label": "Egratignure",
+              "value": 0,
+              "min": 0,
+              "max": 5
+            },
+            "legere": {
+              "label": "Légère (-1)",
+              "value": 0,
+              "min": 0,
+              "max": 5
+            },
+            "grave": {
+              "label": "Grave (-3)",
+              "value": 0,
+              "min": 0,
+              "max": 3
+            },
+            "fatale": {
+              "label": "Fatale (-5)",
+              "value": 0,
+              "min": 0,
+              "max": 2
+            },
+            "mort": {
+              "label": "Mort",
+              "value": 0,
+              "min": 0,
+              "max": 1
+            }
+          }
         }
+      },
+      "playercharacter": {
+        "templates": ["base", "caracs", "comps", "tendances", "magie", "vie"]
+      },
+      "adversaire": {
+        "templates": ["base", "caracs", "comps", "tendances", "magie", "vie"]
+      },
+      "pnj": {
+        "templates": ["base"]
+      }
     },
     "Item": {
       "types": ["avantage", "desavantage", "don", "technique", "arme", "armure", "objet", "sortilege"],

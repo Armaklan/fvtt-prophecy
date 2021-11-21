@@ -1,8 +1,9 @@
 export const PROPHECY = {};
 
 PROPHECY.actorTypes = {
-    playercharacter: 'Personnage joueur'
-}
+  playercharacter: "Personnage joueur",
+  adversaire: "Adversaire"
+};
 
 PROPHECY.itemTypes = {
     avantage: "Avantage",
