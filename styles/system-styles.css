@@ -1,38 +1,38 @@
-.scores {
+.sheet .scores {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
 }
 
-.scores label {
+.sheet .scores label {
   text-transform: capitalize;
 }
 
-.scores > li {
+.sheet .scores > li {
   display: flex;
 }
 
-.scores > li > label {
+.sheet .scores > li > label {
   flex: 1 1 100%;
 }
 
-.scores > li > input {
+.sheet .scores > li > input {
   width: 4em;
 }
 
-.attrs-container {
+.sheet .attrs-container {
   display: flex;
   max-width: 100%;
 }
 
-.comps-container {
+.sheet .comps-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
 }
 
-.comps-container > *, .attrs-container > * {
+.sheet .comps-container > *, .attrs-container > * {
   width: 25%;
   box-sizing: border-box;
   padding: 0.5em;
@@ -51,12 +51,12 @@
   padding: 1em;
 }
 
-.rollable {
+.sheet .rollable {
   cursor: pointer;
   color: #992233;
 }
 
-.sheet-body .editor {
+.sheet .sheet-body .editor {
   height: 95%;
 }
 
@@ -74,59 +74,59 @@
   flex: 1 1 100%;
 }
 
-.items-list .item-image img {
+.sheet .items-list .item-image img {
   max-width: 32px;
 }
 
-.items-list {
+.sheet .items-list {
   list-style: none;
   padding: 0;
   overflow-y: auto;
   line-height: 30px;
 }
 
-.items-list .item-header {
+.sheet .items-list .item-header {
   font-weight: bold;
 }
 
-.items-list .item {
+.sheet .items-list .item {
   line-height: 24px;
   padding: 3px 0;
 }
 
-.items-list .item .item-image {
+.sheet .items-list .item .item-image {
   flex: 0 0 24px;
 }
 
-.items-list .item img {
+.sheet .items-list .item img {
   display: block;
 }
 
-.items-list .item:last-child {
+.sheet .items-list .item:last-child {
   border-bottom: none;
 }
 
-.items-list .item .item-list {
+.sheet .items-list .item .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.items-list .item .item-controls {
+.sheet .items-list .item .item-controls {
   flex: 0 0 66px;
   justify-content: flex-end;
 }
 
-.items-list .item .item-controls a {
+.sheet .items-list .item .item-controls a {
   flex: 0 0 22px;
   text-align: center;
 }
 
-.items-list .item-name {
+.sheet .items-list .item-name {
   margin: 0;
 }
 
-.items-list .item-controls {
+.sheet .items-list .item-controls {
   flex: 0 0 86px;
   text-align: right;
 }
