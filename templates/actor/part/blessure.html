@@ -1,0 +1,24 @@
+<div>
+    <h3>Blessures</h3>
+    <ul class="blessures-scores scores flexrow">
+        {{#each data.data.blessures as |blessure id|}}
+        <li class="blessure">
+            <label>{{ id }}</label>
+            <input
+                class="blessure-score"
+                name="data.blessures.{{id}}.value"
+                type="number"
+                value="{{blessure.value}}"
+                placeholder="3"
+            >
+            <input
+                class="blessure-score"
+                name="data.blessures.{{id}}.max"
+                type="number"
+                value="{{blessure.max}}"
+                placeholder="3"
+            >
+        </li>
+        {{/each}}
+    </ul>
+</div>

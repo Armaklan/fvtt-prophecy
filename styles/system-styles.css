@@ -30,7 +30,7 @@
 }
 
 .comps-container > * {
-  width: 33%;
+  width: 25%;
   box-sizing: border-box;
   flex-wrap: wrap;
   padding: 0.5em;

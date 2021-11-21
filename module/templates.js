@@ -9,6 +9,7 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/fvtt-prophecy/templates/actor/part/attributs.html",
     "systems/fvtt-prophecy/templates/actor/part/caracteristiques.html",
     "systems/fvtt-prophecy/templates/actor/part/avantages.html",
+    "systems/fvtt-prophecy/templates/actor/part/blessure.html",
     "systems/fvtt-prophecy/templates/actor/part/magie.html",
     "systems/fvtt-prophecy/templates/actor/part/equipements.html",
     "systems/fvtt-prophecy/templates/actor/part/group-competences.html",

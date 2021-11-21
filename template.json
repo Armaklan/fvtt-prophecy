@@ -28,6 +28,19 @@
                   "max": 20
                 }
               },
+              "secondaire": {
+                "maitrise": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "chance": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "initiative": ""
+              },
               "caracteristiques": {
                 "force": {
                   "value": 0,
@@ -300,10 +313,44 @@
                   "max": 20
                 }
               }
+            },
+            "vie": {
+              "blessures": {
+                "egratignure": {
+                  "label": "Egratignure",
+                  "value": 0,
+                  "min": 0,
+                  "max": 5
+                },
+                "legere": {
+                  "label": "Légère (-1)",
+                  "value": 0,
+                  "min": 0,
+                  "max": 5
+                },
+                "grave": {
+                  "label": "Grave (-3)",
+                  "value": 0,
+                  "min": 0,
+                  "max": 3
+                },
+                "fatale": {
+                  "label": "Fatale (-5)",
+                  "value": 0,
+                  "min": 0,
+                  "max": 2
+                },
+                "mort": {
+                  "label": "Mort",
+                  "value": 0,
+                  "min": 0,
+                  "max": 1
+                }
+              }
             }
         },
         "playercharacter": {
-            "templates": ["base", "caracs", "comps", "tendances", "magie"]
+            "templates": ["base", "caracs", "comps", "tendances", "magie", "vie"]
         }
     },
     "Item": {

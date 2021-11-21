@@ -8,4 +8,51 @@
         </li>
         {{/each}}
     </ul>
+    <h3>Attributs secondaire</h3>
+    <ul class="attributs-scores scores flexrow">
+        <li class="attribut">
+            <label>Maitrise</label>
+            <input
+                class="attribut-score"
+                name="data.secondaire.maitrise.value"
+                type="number"
+                value="{{data.data.secondaire.maitrise.value}}"
+                placeholder="3"
+            >
+            <input
+                class="attribut-score"
+                name="data.secondaire.maitrise.max"
+                type="number"
+                value="{{data.data.secondaire.maitrise.max}}"
+                placeholder="3"
+            >
+        </li>
+        <li class="attribut">
+            <label>Chance</label>
+            <input
+                class="attribut-score"
+                name="data.secondaire.chance.value"
+                type="number"
+                value="{{data.data.secondaire.chance.value}}"
+                placeholder="3"
+            >
+            <input
+                class="attribut-score"
+                name="data.secondaire.chance.max"
+                type="number"
+                value="{{data.data.secondaire.chance.max}}"
+                placeholder="3"
+            >
+        </li>
+        <li class="attribut">
+            <label>Initiative</label>
+            <input
+                class="attribut-score"
+                name="data.secondaire.initiative"
+                type="text"
+                value="{{data.data.secondaire.initiative}}"
+                placeholder="3"
+            >
+        </li>
+    </ul>
 </div>
