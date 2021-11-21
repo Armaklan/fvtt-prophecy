@@ -2,7 +2,7 @@
   "name": "fvtt-prophecy",
   "title": "Prophecy",
   "description": "Système pour le jeu de rôle Prophecy V2.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "templateVersion": 2,
   "author": "Lionel ZUBER",
   "esmodules": ["module/prophecy.js"],
