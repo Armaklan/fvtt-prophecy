@@ -1,0 +1,17 @@
+<div>
+    <h3>Caractéristique</h3>
+    <ul class="scores caracteristiques-scores flexrow">
+        {{#each data.data.caracteristiques as |caracteristique id|}}
+        <li class="caracteristique">
+            <label class="caracteristique-name rollable" data-caracteristique="{{id}}">{{ id }}</label>
+            <input
+                class="caracteristique-score"
+                name="data.caracteristiques.{{id}}.value"
+                type="number"
+                value="{{caracteristique.value}}"
+                placeholder="3"
+            >
+        </li>
+        {{/each}}
+    </ul>
+</div>

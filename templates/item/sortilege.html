@@ -1,0 +1,136 @@
+<form
+    class="{{cssClass}}"
+    autocomplete="off"
+>
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img
+            class="profile-img"
+            src="{{item.img}}"
+            data-edit="img"
+            title="{{item.name}}"
+            height="100"
+            width="100"
+        />
+        <div class="header-fields">
+            <h1 class="charname"><input
+                    name="name"
+                    type="text"
+                    value="{{item.name}}"
+                    placeholder="Name"
+                /></h1>
+            <div class="item-subtitle">{{item.type}}</div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav
+        class="sheet-tabs tabs"
+        data-group="primary"
+    >
+        <a
+            class="item"
+            data-tab="description"
+        >
+            <h2>Description</h2>
+        </a>
+        <a
+            class="item"
+            data-tab="parametre"
+        >
+            <h2>Paramètres</h2>
+        </a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <div
+            class="tab description"
+            data-group="primary"
+            data-tab="description"
+        >
+            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+        <div
+            class="tab parametre"
+            data-group="primary"
+            data-tab="parametre"
+        >
+            <div class="form-group">
+                <label for="data.discipline">Discipline</label>
+                <select 
+                    name="data.discipline"
+                    id="data.discipline"
+                    value="{{data.data.discipline}}">
+                    <option value="instinctive">Magie instinctive</option>
+                    <option value="invocatoire">Magie invocatoire</option>
+                    <option value="sorcellerie">Sorcellerie</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="data.sphere">Sphères</label>
+                <select
+                    name="data.sphere"
+                    id="data.sphere"
+                    value="{{data.data.sphere}}"
+                >
+                    <option value="pierre">La pierre</option>
+                    <option value="metal">Le métal</option>
+                    <option value="cite">La cité</option>
+                    <option value="feu">Le feu</option>
+                    <option value="nature">La nature</option>
+                    <option value="vents">Les vents</option>
+                    <option value="oceans">Les océans</option>
+                    <option value="reves">Les rêves</option>
+                    <option value="ombre">L'ombre</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="data.cout">Cout</label>
+                <input
+                    name="data.cout"
+                    id="data.cout"
+                    type="number"
+                    value="{{data.data.cout}}"
+                    data-dtype="String"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="data.temps">Temps</label>
+                <input
+                    name="data.temps"
+                    id="data.temps"
+                    type="text"
+                    value="{{data.data.temps}}"
+                    data-dtype="String"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="data.diff">Difficulté</label>
+                <input
+                    name="data.diff"
+                    id="data.diff"
+                    type="number"
+                    value="{{data.data.diff}}"
+                    data-dtype="String"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="data.clés">Clés</label>
+                <input
+                    name="data.clés"
+                    id="data.clés"
+                    type="text"
+                    value="{{data.data.clés}}"
+                    data-dtype="String"
+                />
+            </div>
+        </div>
+    </section>
+</form>

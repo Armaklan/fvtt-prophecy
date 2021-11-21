@@ -1,0 +1,14 @@
+<form>
+    <label for="roll-modificateur">
+        <input id="roll-modificateur" type="number" value="0" name="modificateur">
+    </label>
+    <label for="roll-attribut">
+        Attribut : 
+        <select name="attribut" id="roll-attribut">
+            {{#each actor.data.data.attributs as |attribut id|}}
+                {{ id }}
+                <option value="{{id}}">{{ id }}</option>
+            {{/each}}
+        </select>
+    </label>
+</form>

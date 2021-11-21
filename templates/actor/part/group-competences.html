@@ -1,0 +1,11 @@
+<div>
+    <h3>{{ groupname }}</h3>
+    <ul class="scores competences-scores flexrow">
+        {{#each competences as |competence id|}}
+        <li class="competence">
+            <label class="competence-name rollable" data-group="{{../groupname}}" data-competence="{{id}}">{{ id }}</label>
+            <input class="competence-score" name="data.{{../groupname}}.{{id}}.value" type="number" value="{{competence.value}}" placeholder="3">
+        </li>
+        {{/each}}
+    </ul>
+</div>

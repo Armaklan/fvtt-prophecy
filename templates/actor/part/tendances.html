@@ -1,0 +1,26 @@
+<div>
+    <h3>Tendances</h3>
+    <ul class="tendances-scores scores flexrow">
+        {{#each data.data.scoreTendances as |tendance id|}}
+        <li class="tendance">
+            <label>{{ id }}</label>
+            <input class="tendance-score" name="data.scoreTendances.{{id}}.value" type="number" value="{{tendance.value}}" placeholder="3">
+        </li>
+        {{/each}}
+    </ul>
+    <h3>Cercle de Tendances</h3>
+    <ul class="tendances-scores scores flexrow">
+        {{#each data.data.cercleTendances as |tendance id|}}
+        <li class="tendance">
+            <label>{{ id }}</label>
+            <input
+                class="tendance-score"
+                name="data.cercleTendances.{{id}}.value"
+                type="number"
+                value="{{tendance.value}}"
+                placeholder="0"
+            >
+        </li>
+        {{/each}}
+    </ul>
+</div>

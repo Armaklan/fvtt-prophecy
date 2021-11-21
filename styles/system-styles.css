@@ -1,0 +1,148 @@
+.scores {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.scores label {
+  text-transform: capitalize;
+}
+
+.scores > li {
+  display: flex;
+}
+
+.scores > li > label {
+  flex: 1 1 100%;
+}
+
+.scores > li > input {
+  width: 4em;
+}
+
+.attrs-container {
+  display: flex;
+}
+
+.comps-container {
+  display: flex;
+}
+
+.comps-container > * {
+  width: 33%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.attrs-container div,
+.comps-container div {
+  box-sizing: border-box;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.sheet.actor h3 {
+  width: 100%;
+  text-align: center;
+  background-color: #003c1e;
+  color: white;
+  text-transform: uppercase;
+}
+
+.sheet.actor form {
+  background-color: white;
+  padding: 1em;
+}
+
+.rollable {
+  cursor: pointer;
+  color: #992233;
+}
+
+.sheet-body .editor {
+  height: 95%;
+}
+
+.sheet > section > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet .sheet-body {
+  flex: 1 1 100%;
+  display: flex;
+}
+
+.sheet .sheet-body > * {
+  flex: 1 1 100%;
+}
+
+.items-list .item-image img {
+  max-width: 32px;
+}
+
+.items-list {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+  line-height: 30px;
+}
+
+.items-list .item-header {
+  font-weight: bold;
+}
+
+.items-list .item {
+  line-height: 24px;
+  padding: 3px 0;
+}
+
+.items-list .item .item-image {
+  flex: 0 0 24px;
+}
+
+.items-list .item img {
+  display: block;
+}
+
+.items-list .item:last-child {
+  border-bottom: none;
+}
+
+.items-list .item .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.items-list .item .item-controls {
+  flex: 0 0 44px;
+  justify-content: flex-end;
+}
+
+.items-list .item .item-controls a {
+  flex: 0 0 22px;
+  text-align: center;
+}
+
+.items-list .item-name {
+  margin: 0;
+}
+
+.items-list .item-controls {
+  flex: 0 0 86px;
+  text-align: right;
+}
+
+.sheet .items-list .item .item-summary {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  font-size: 1em;
+  line-height: 1.2em;
+  padding: 8px;
+  border-top: 4px solid #DBD5B0;
+}

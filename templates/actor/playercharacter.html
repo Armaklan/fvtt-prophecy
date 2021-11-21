@@ -1,0 +1,114 @@
+<form
+    class="{{cssClass}}"
+    autocomplete="off"
+>
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img
+            class="profile-img"
+            src="{{actor.img}}"
+            data-edit="img"
+            title="{{actor.name}}"
+            height="100"
+            width="100"
+        />
+        <div class="header-fields">
+            <h1 class="charname"><input
+                name="name"
+                type="text"
+                value="{{actor.name}}"
+                placeholder="Name"
+            /></h1>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav
+        class="sheet-tabs tabs"
+        data-group="primary"
+    >
+        <a
+            class="item"
+            data-tab="concept"
+        >
+            <h2>Concept</h2>
+        </a>
+        <a
+            class="item"
+            data-tab="caracteristiques"
+        >
+            <h2>Caractéristiques</h2>
+        </a>
+        <a
+            class="item"
+            data-tab="avantage"
+        >
+            <h2>Avantages</h2>
+        </a>
+        <a
+            class="item"
+            data-tab="equipement"
+        >
+            <h2>Equipements</h2>
+        </a>
+        <a
+            class="item"
+            data-tab="magie"
+        >
+            <h2>Magie</h2>
+        </a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <div
+            class="tab caracteristiques"
+            data-group="primary"
+            data-tab="caracteristiques"
+        >
+            <div class="attrs-container">
+                {{> 'systems/fvtt-prophecy/templates/actor/part/attributs.html' }}
+                {{> 'systems/fvtt-prophecy/templates/actor/part/caracteristiques.html' }}
+                {{> 'systems/fvtt-prophecy/templates/actor/part/tendances.html' }}
+            </div>
+            <div class="comps-container">
+                {{> 'systems/fvtt-prophecy/templates/actor/part/group-competences.html' competences=data.data.combat groupname='combat' }}
+                {{> 'systems/fvtt-prophecy/templates/actor/part/group-competences.html' competences=data.data.mouvement groupname='mouvement' }}
+                {{> 'systems/fvtt-prophecy/templates/actor/part/group-competences.html' competences=data.data.theorie groupname='theorie' }}
+            </div>
+        </div>
+
+        <div
+            class="tab avantage"
+            data-group="primary"
+            data-tab="avantage"
+        >
+        {{> 'systems/fvtt-prophecy/templates/actor/part/avantages.html' }}
+    </div>
+
+        <div
+            class="tab concept"
+            data-group="primary"
+            data-tab="concept"
+        >
+            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <div
+            class="tab equipement"
+            data-group="primary"
+            data-tab="equipement"
+        >
+        {{> 'systems/fvtt-prophecy/templates/actor/part/equipements.html' }}
+        </div>
+
+        <div
+            class="tab equipement"
+            data-group="primary"
+            data-tab="magie"
+        >
+            {{> 'systems/fvtt-prophecy/templates/actor/part/magie.html' }}
+        </div>
+    </section>
+</form>

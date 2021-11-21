@@ -1,0 +1,11 @@
+<div>
+    <h3>Attributs</h3>
+    <ul class="attributs-scores scores flexrow">
+        {{#each data.data.attributs as |attribut id|}}
+        <li class="attribut">
+            <label>{{ id }}</label>
+            <input class="attribut-score" name="data.attributs.{{id}}.value" type="number" value="{{attribut.value}}" placeholder="3">
+        </li>
+        {{/each}}
+    </ul>
+</div>

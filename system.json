@@ -1,0 +1,15 @@
+{
+  "name": "fvtt-prophecy",
+  "title": "Prophecy",
+  "description": "Système pour le jeu de rôle Prophecy V2.",
+  "version": "1.0.0",
+  "templateVersion": 2,
+  "author": "Lionel ZUBER",
+  "esmodules": ["module/prophecy.js"],
+  "styles": ["styles/system-styles.css"],
+  "packs": [],
+  "socket": false,
+  "initiative": "1d10",
+  "gridDistance": 5,
+  "gridUnits": "ft"
+}
