@@ -23,25 +23,19 @@
 
 .attrs-container {
   display: flex;
+  max-width: 100%;
 }
 
 .comps-container {
   display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
-.comps-container > * {
+.comps-container > *, .attrs-container > * {
   width: 25%;
   box-sizing: border-box;
-  flex-wrap: wrap;
   padding: 0.5em;
-  width: 100%;
-}
-
-.attrs-container div,
-.comps-container div {
-  box-sizing: border-box;
-  padding: 0.5em;
-  width: 100%;
 }
 
 .sheet.actor h3 {
@@ -145,4 +139,8 @@
   line-height: 1.2em;
   padding: 8px;
   border-top: 4px solid #DBD5B0;
+}
+
+.sheet .tab {
+    max-width: 100%;;
 }

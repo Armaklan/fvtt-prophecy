@@ -210,6 +210,196 @@
                   "min": 0,
                   "max": 20
                 }
+              },
+              "pratique": {
+                "alchimie": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "astrologie": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "cartographie": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "estimation": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "herboristerie": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "lire-et-ecrire": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "matieres-premieres": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "medecine": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "premiers-soins": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "survie": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "vie en cité": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                }
+              },
+              "manuel": {
+                "armes-de-siege": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "artisanat": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "contrefacon": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "discretion": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "pieges": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "pister": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                }
+              },
+              "manipulation": {
+                "armes-a-projectiles": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "attelages": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "deguisement": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "deverrouillage": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "don-artistique": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "faire-les-poches": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "jeu": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "jongler": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                }
+              },
+              "communication": {
+                "baratin": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "conte": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "eloquence": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "marchandage": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "psychologie": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                }
+              },
+              "influence": {
+                "art-de-la-scene": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "commandement": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "diplomatie": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "dressage": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "intimidation": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                },
+                "seduction": {
+                  "value": 0,
+                  "min": 0,
+                  "max": 20
+                }
               }
             },
             "tendances": {
