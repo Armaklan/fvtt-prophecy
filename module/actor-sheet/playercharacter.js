@@ -51,10 +51,14 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
       .find(".competence-name")
       .click((event) => this.onCompetenceRoll(event));
 
+    html.find(".sphere-name").click((event) => this.onMagicRoll(event));
+
     html.find(".item-test").on("click", this._onItemTest.bind(this));
     html.find(".item-delete").on("click", this._onItemDelete.bind(this));
     html.find(".item-edit").on("click", this._onItemEdit.bind(this));
-    html.find(".item h4.item-name").on("click", (event) => this._onItemSummary(event));
+    html
+      .find(".item h4.item-name")
+      .on("click", (event) => this._onItemSummary(event));
 
     if (!this.isEditable) return;
   }
@@ -115,7 +119,6 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     li.toggleClass("expanded");
   }
 
-
   async onCaracteristiqueRoll(event) {
     console.log("Prophecy | Roll caracteristique", event);
     event.preventDefault();
@@ -145,7 +148,59 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     }
   }
 
-  async _buildRollDialog(name, selector) {
+  async onMagicRoll(event) {
+    console.log("Prophecy | Roll magie", event);
+    event.preventDefault();
+
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+
+    if (dataset.sphere) {
+      const selector = `@spheres.${dataset.sphere}.value`;
+      await this._buildMagicRollDialog(dataset.sphere, selector);
+    }
+  }
+
+  async _buildMagicRollDialog(name, elementSelector) {
+    const template = "systems/fvtt-prophecy/templates/dialog/roll-magie.html";
+    const dialogData = {
+      actor: this.actor,
+    };
+    const actor = this.actor;
+    const html = await renderTemplate(template, dialogData);
+
+    return new Promise((resolve) => {
+      new Dialog({
+        title: "Lancer de dés",
+        content: html,
+        buttons: {
+          std: {
+            label: "Jet standard",
+            callback: (html) => {
+              const dialogData = html[0].querySelector("form");
+              const attributSelector = `@disciplines.${dialogData.discipline.value}.value`;
+              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              this._roll(actor, name, rollFormula);
+            },
+          },
+          tendance: {
+            label: "Jet de tendance",
+            callback: (html) => {
+              const dialogData = html[0].querySelector("form");
+              const attributSelector = `@disciplines.${dialogData.discipline.value}.value`;
+              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              this._rollTendance(actor, name, rollFormula);
+            },
+          },
+        },
+        close: (html) => {
+          resolve();
+        },
+      }).render(true);
+    });
+  }
+
+  async _buildRollDialog(name, elementSelector) {
     const template = "systems/fvtt-prophecy/templates/dialog/roll.html";
     const dialogData = {
       actor: this.actor,
@@ -160,18 +215,21 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
         buttons: {
           std: {
             label: "Jet standard",
-            callback: (html) =>
-              this._roll(actor, name, selector, html[0].querySelector("form")),
+            callback: (html) => {
+              const dialogData = html[0].querySelector("form");
+              const attributSelector = `@attributs.${dialogData.attribut.value}.value`;
+              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              this._roll(actor, name, rollFormula);
+            },
           },
           tendance: {
             label: "Jet de tendance",
-            callback: (html) =>
-              this._rollTendance(
-                actor,
-                name,
-                selector,
-                html[0].querySelector("form")
-              ),
+            callback: (html) => {
+              const dialogData = html[0].querySelector("form");
+              const attributSelector = `@attributs.${dialogData.attribut.value}.value`;
+              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              this._rollTendance(actor, name, rollFormula);
+            },
           },
         },
         close: (html) => {
@@ -181,9 +239,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     });
   }
 
-  _roll(actor, name, elementSelector, dialogData) {
-    const attributSelector = `@attributs.${dialogData.attribut.value}.value`;
-    const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+  _roll(actor, name, rollFormula) {
     const roll = new Roll(rollFormula, this.actor.data.data);
     roll.roll().toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
@@ -191,10 +247,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     });
   }
 
-  _rollTendance(actor, name, elementSelector, dialogData) {
-    const attributSelector = `@attributs.${dialogData.attribut.value}.value`;
-    const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
-
+  _rollTendance(actor, name, rollFormula) {
     new Roll(rollFormula, this.actor.data.data).roll().toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `${name} - Dragon`,

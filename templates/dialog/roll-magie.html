@@ -1,0 +1,28 @@
+<form>
+    <div class="form-group">
+        <label for="roll-discipline">
+            Discipline :
+        </label>
+        <select
+            name="discipline"
+            id="roll-discipline"
+        >
+            {{#each actor.data.data.disciplines as |discipline id|}}
+            {{ id }}
+            <option value="{{id}}">{{ id }}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="roll-modificateur">
+            Modificateur
+        </label>
+        <input
+            id="roll-modificateur"
+            type="number"
+            value="0"
+            name="modificateur"
+        >
+    
+    </div>
+</form>

@@ -15,6 +15,7 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/fvtt-prophecy/templates/actor/part/group-competences.html",
     "systems/fvtt-prophecy/templates/actor/part/tendances.html",
     "systems/fvtt-prophecy/templates/dialog/roll.html",
+    "systems/fvtt-prophecy/templates/dialog/roll-magie.html",
   ];
 
   // Load the template parts

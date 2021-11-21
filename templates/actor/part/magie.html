@@ -22,7 +22,7 @@
         <ul class="spheres-scores scores flexrow">
             {{#each data.data.spheres as |sphere id|}}
             <li class="sphere">
-                <label>{{ id }}</label>
+                <label class="sphere-name rollable" data-sphere="{{id}}">{{ id }}</label>
                 <input
                     class="sphere-score"
                     name="data.spheres.{{id}}.value"
