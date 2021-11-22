@@ -60,7 +60,69 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
       .find(".item h4.item-name")
       .on("click", (event) => this._onItemSummary(event));
 
+    html.find(".competences-add").on("click", this._onSkillAdd.bind(this));
+    html.find(".competences-delete").on("click", this._onSkillDelete.bind(this));
+
     if (!this.isEditable) return;
+  }
+
+  async _onSkillDelete(event) {
+    console.log("Prophecy | Skill delete", event);
+    event.preventDefault();
+
+    const dataset = event.currentTarget.dataset;
+    const group = dataset.group;
+    const competence = dataset.competence;
+    const actor = this.actor;
+  
+    const data = { data: {} };
+    data.data[group] = {};
+    data.data[group][competence] = null;
+
+    actor.update(data);
+  }
+
+  async _onSkillAdd(event) {
+    console.log("Prophecy | Skill add", event);
+    event.preventDefault();
+    const dataset = event.currentTarget.dataset;
+    const group = dataset.group;
+    const actor = this.actor;
+
+    const template = "systems/fvtt-prophecy/templates/dialog/add-comp.html";
+    const dialogData = {};
+    const html = await renderTemplate(template, dialogData);
+
+    return new Promise((resolve) => {
+      new Dialog({
+        title: "Ajouter une compétence",
+        content: html,
+        buttons: {
+          std: {
+            label: "Ajouter",
+            callback: (html) => {
+              const dialogData = html[0].querySelector("form");
+
+              const data = { data: {}};
+              data.data[group] = {};
+              data.data[group][dialogData.compName.value] = {
+                min: 0,
+                value: 1,
+                max: 20,
+                added: true
+              };
+
+              actor.update(data);
+            },
+          }
+        },
+        close: (html) => {
+          resolve();
+        },
+      }).render(true);
+    });
+
+
   }
 
   async _onItemTest(event) {

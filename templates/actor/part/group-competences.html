@@ -5,7 +5,23 @@
         <li class="competence">
             <label class="competence-name rollable" data-group="{{../groupname}}" data-competence="{{id}}">{{ id }}</label>
             <input class="competence-score" name="data.{{../groupname}}.{{id}}.value" type="number" value="{{competence.value}}" placeholder="3">
+            <input type="hidden" name="data.{{../groupname}}.{{id}}.added" value="{{competence.added}}">
+            {{#if false }}
+                <a
+                    class="competences-delete"
+                    title="Ajouter"
+                    data-group="{{../groupname}}"
+                    data-competence="{{id}}"
+                ><i class="fas fa-trash"></i></a>
+            {{/if}}
         </li>
         {{/each}}
+        <li class="competence">
+            <a
+                class="competences-add"
+                title="Ajouter"
+                data-group="{{groupname}}"
+            ><i class="fas fa-plus"></i></a>
+        </li>
     </ul>
 </div>

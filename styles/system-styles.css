@@ -144,3 +144,7 @@
 .sheet.prophecy .tab {
     max-width: 100%;;
 }
+
+.sheet.prophecy .competences-add {
+  text-align: center;
+}
