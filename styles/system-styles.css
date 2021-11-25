@@ -56,7 +56,7 @@
   color: #992233;
 }
 
-.sheet.prophecy .sheet.prophecy-body .editor {
+.sheet.prophecy .sheet-body .editor {
   height: 95%;
 }
 
@@ -65,12 +65,12 @@
   flex-direction: column;
 }
 
-.sheet.prophecy .sheet.prophecy-body {
+.sheet.prophecy .sheet-body {
   flex: 1 1 100%;
   display: flex;
 }
 
-.sheet.prophecy .sheet.prophecy-body > * {
+.sheet.prophecy .sheet-body > * {
   flex: 1 1 100%;
 }
 
