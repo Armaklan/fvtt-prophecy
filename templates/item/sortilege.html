@@ -63,9 +63,9 @@
                     name="data.discipline"
                     id="data.discipline"
                     value="{{data.data.discipline}}">
-                    <option value="instinctive">Magie instinctive</option>
-                    <option value="invocatoire">Magie invocatoire</option>
-                    <option value="sorcellerie">Sorcellerie</option>
+                    <option value="instinctive" {{#if (eq data.data.discipline 'instinctive')}}selected{{/if}}>Magie instinctive</option>
+                    <option value="invocatoire" {{#if (eq data.data.discipline 'invocatoire')}}selected{{/if}}>Magie invocatoire</option>
+                    <option value="sorcellerie" {{#if (eq data.data.discipline 'sorcellerie')}}selected{{/if}}>Sorcellerie</option>
                 </select>
             </div>
 
@@ -76,15 +76,15 @@
                     id="data.sphere"
                     value="{{data.data.sphere}}"
                 >
-                    <option value="pierre">La pierre</option>
-                    <option value="metal">Le métal</option>
-                    <option value="cite">La cité</option>
-                    <option value="feu">Le feu</option>
-                    <option value="nature">La nature</option>
-                    <option value="vents">Les vents</option>
-                    <option value="oceans">Les océans</option>
-                    <option value="reves">Les rêves</option>
-                    <option value="ombre">L'ombre</option>
+                    <option value="pierre" {{#if (eq data.data.sphere 'pierre')}}selected{{/if}}>La pierre</option>
+                    <option value="metal" {{#if (eq data.data.sphere 'metal')}}selected{{/if}}>Le métal</option>
+                    <option value="cite" {{#if (eq data.data.sphere 'cite')}}selected{{/if}}>La cité</option>
+                    <option value="feu" {{#if (eq data.data.sphere 'feu')}}selected{{/if}}>Le feu</option>
+                    <option value="nature" {{#if (eq data.data.sphere 'nature')}}selected{{/if}}>La nature</option>
+                    <option value="vents" {{#if (eq data.data.sphere 'vents')}}selected{{/if}}>Les vents</option>
+                    <option value="oceans" {{#if (eq data.data.sphere 'oceans')}}selected{{/if}}>Les océans</option>
+                    <option value="reves" {{#if (eq data.data.sphere 'reves')}}selected{{/if}}>Les rêves</option>
+                    <option value="ombre" {{#if (eq data.data.sphere 'ombre')}}selected{{/if}}>L'ombre</option>
                 </select>
             </div>
 
