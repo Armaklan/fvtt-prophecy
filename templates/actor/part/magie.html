@@ -34,6 +34,34 @@
             {{/each}}
         </ul>
     </div>
+
+    <div>
+        <h3>Réserves de magie</h3>
+        <ul class="reserves-scores scores flexrow">
+            {{#each data.data.reserves as |reserve id|}}
+            <li class="reserve">
+                <label
+                    class="reserve-name"
+                >{{ id }}</label>
+                <input
+                    class="reserve-score"
+                    name="data.reserves.{{id}}.value"
+                    type="number"
+                    value="{{reserve.value}}"
+                    placeholder="0"
+                >
+                <input
+                    class="reserve-score"
+                    name="data.reserves.{{id}}.max"
+                    type="number"
+                    value="{{reserve.max}}"
+                    placeholder="0"
+                >
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    
 </div>
 
 <div>

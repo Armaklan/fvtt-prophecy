@@ -502,6 +502,58 @@
               "min": 0,
               "max": 20
             }
+          },
+          "reserves": {
+            "pierre": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "metal": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "cite": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "feu": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "nature": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "vents": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "oceans": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "reves": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "ombre": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            },
+            "commune": {
+              "value": 0,
+              "min": 0,
+              "max": 0
+            }
           }
         },
         "vie": {
@@ -558,19 +610,19 @@
       },
       "avantage": {
         "templates": ["base"],
-        "cout": 0
+        "cout": "0"
       },
       "desavantage": {
         "templates": ["base"],
-        "cout": 0
+        "cout": "0"
       },
       "don": {
         "templates": ["base"],
-        "cout": 0
+        "cout": "0"
       },
       "technique": {
         "templates": ["base"],
-        "cout": 0
+        "cout": "0"
       },
       "arme": {
         "templates": ["base"],
