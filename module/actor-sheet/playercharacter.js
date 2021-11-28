@@ -61,8 +61,10 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
       .on("click", (event) => this._onItemSummary(event));
 
     html.find(".competences-add").on("click", this._onSkillAdd.bind(this));
-    html.find(".competences-delete").on("click", this._onSkillDelete.bind(this));
-
+    html
+      .find(".competences-delete")
+      .on("click", this._onSkillDelete.bind(this));
+    html.find(".sort-test").on("click", this._onSortTest.bind(this));
     if (!this.isEditable) return;
   }
 
@@ -74,7 +76,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     const group = dataset.group;
     const competence = dataset.competence;
     const actor = this.actor;
-  
+
     const data = { data: {} };
     data.data[group] = {};
     data.data[group][competence] = null;
@@ -103,26 +105,36 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
             callback: (html) => {
               const dialogData = html[0].querySelector("form");
 
-              const data = { data: {}};
+              const data = { data: {} };
               data.data[group] = {};
               data.data[group][dialogData.compName.value] = {
                 min: 0,
                 value: 1,
                 max: 20,
-                added: true
+                added: true,
               };
 
               actor.update(data);
             },
-          }
+          },
         },
         close: (html) => {
           resolve();
         },
       }).render(true);
     });
+  }
 
-
+  async _onSortTest(event) {
+    console.log("Prophecy | Test sortilege", event);
+    event.preventDefault();
+    const dataset = event.currentTarget.dataset;
+    const sphere = dataset.sphere;
+    const discipline = dataset.discipline;
+    const attributSelector = `@disciplines.${discipline}.value`;
+    const elementSelector = `@spheres.${sphere}.value`;
+    const rollFormula = `1d10+${attributSelector}+${elementSelector}`;
+    this._roll(this.actor, "Sortilege", rollFormula);
   }
 
   async _onItemTest(event) {
