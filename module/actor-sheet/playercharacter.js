@@ -36,6 +36,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     console.debug("Prophecy | Sheet data", sheetData);
 
     sheetData.displayBlessures = this._prepareBlessure(sheetData);
+    sheetData.tendances = this._prepareCercleTendance(sheetData);
 
     return sheetData;
   }
@@ -51,6 +52,26 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
         checked: i < blessures[key].value,
       })),
     }));
+  }
+
+  _prepareCercleTendance(sheetData) {
+    const data = sheetData.data.data;
+    const scores = data.scoreTendances;
+    const cercles = data.cercleTendances;
+
+    return Object.keys(scores)
+      .map((key) => ({
+        ...scores[key],
+        key,
+        cercle: new Array(cercles[key].max - 1).fill("").map((v, i) => ({
+          id: i,
+          checked: i < cercles[key].value,
+        })),
+      }))
+      .reduce((prev, curr) => {
+        prev[curr.key] = curr;
+        return prev;
+      }, {});
   }
 
   /** @override */
@@ -73,6 +94,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     html.find(".item-delete").on("click", this._onItemDelete.bind(this));
     html.find(".item-edit").on("click", this._onItemEdit.bind(this));
     html.find(".blessure-check").on("click", this._onBlessureCheck.bind(this));
+    html.find(".cercle-check").on("click", this._onCercleCheck.bind(this));
     html
       .find(".config-blessure")
       .on("click", this._onConfigBlessure.bind(this));
@@ -97,26 +119,60 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     const keyBox = dataset.box;
 
     const displayBlessures = this._prepareBlessure(this.actor);
-    const updatedBlessures = displayBlessures.map(b => {
-      if(b.key !== keyBlessure) return b;
-      
-      b.checkbox[keyBox].checked = !b.checkbox[keyBox].checked;
-      b.value = b.checkbox.filter(box => box.checked).length;
+    const updatedBlessures = displayBlessures
+      .map((b) => {
+        if (b.key !== keyBlessure) return b;
 
-      return b;
-    }).reduce((prev, curr) => {
-      prev[curr.key] = {
-        min: curr.min,
-        max: curr.max,
-        value: curr.value,
-        label: curr.label
-      };
-      return prev;
-    }, {});
+        b.checkbox[keyBox].checked = !b.checkbox[keyBox].checked;
+        b.value = b.checkbox.filter((box) => box.checked).length;
 
-    
+        return b;
+      })
+      .reduce((prev, curr) => {
+        prev[curr.key] = {
+          min: curr.min,
+          max: curr.max,
+          value: curr.value,
+          label: curr.label,
+        };
+        return prev;
+      }, {});
+
     const data = { data: {} };
     data.data.blessures = updatedBlessures;
+
+    this.actor.update(data);
+  }
+
+  _onCercleCheck(event) {
+    console.log("Prophecy | On cercle check", event);
+    event.preventDefault();
+
+    const dataset = event.currentTarget.dataset;
+    const keyTendance = dataset.tendance;
+    const keyBox = dataset.box;
+
+    const displayTendance = this._prepareCercleTendance(this.actor);
+    const updatedCercles = Object.keys(displayTendance).map((key) => {
+        const tendance = displayTendance[key];
+        if (tendance.key === keyTendance) {
+          tendance.cercle[keyBox].checked = !tendance.cercle[keyBox].checked;
+        }
+
+        return {
+          value:  tendance.cercle.filter(box => box.checked).length,
+          max:  tendance.cercle.length + 1,
+          min:  0,
+          key: tendance.key
+        };
+      })
+      .reduce((prev, curr) => {
+        prev[curr.key] = curr;
+        return prev;
+      }, {});
+
+    const data = { data: {} };
+    data.data.cercleTendances = updatedCercles;
 
     this.actor.update(data);
   }
@@ -162,7 +218,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
 
               const updatedBlessures = Object.keys(blessures).reduce(
                 (prev, key) => {
-                  prev[key] = { ...blessures[key], max: dialogData[key].value };
+                  prev[key] = { ...blessures[key], max: +dialogData[key].value };
                   return prev;
                 },
                 {}

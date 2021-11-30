@@ -1,25 +1,29 @@
 <div>
     <h3>Tendances</h3>
     <ul class="tendances-scores scores flexrow">
-        {{#each data.data.scoreTendances as |tendance id|}}
-        <li class="tendance">
-            <label>{{ id }}</label>
-            <input class="tendance-score" name="data.scoreTendances.{{id}}.value" type="number" value="{{tendance.value}}" placeholder="3">
-        </li>
-        {{/each}}
-    </ul>
-    <h3>Cercle de Tendances</h3>
-    <ul class="tendances-scores scores flexrow">
-        {{#each data.data.cercleTendances as |tendance id|}}
-        <li class="tendance">
-            <label>{{ id }}</label>
-            <input
-                class="tendance-score"
-                name="data.cercleTendances.{{id}}.value"
-                type="number"
-                value="{{tendance.value}}"
-                placeholder="0"
-            >
+        {{#each tendances as |tendance id|}}
+        <li class="tendance {{ id }}">
+            <div class="tendance-container flexrow">
+                <label>{{ id }}</label>
+                <input class="tendance-score" name="data.scoreTendances.{{id}}.value" type="number" value="{{tendance.value}}" placeholder="3">
+            </div>
+            
+            <div class="cercles-container">
+                {{#each tendance.cercle as |box id|}}
+                <input
+                    class="cercle-check"
+                    name="updatedCercle"
+                    type="checkbox"
+                    {{#if
+                    box.checked}}
+                    checked
+                    {{/if}}
+                    value="{{id}}"
+                    data-tendance="{{tendance.key}}"
+                    data-box="{{box.id}}"
+                >
+                {{/each}}
+            </div>
         </li>
         {{/each}}
     </ul>

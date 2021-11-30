@@ -59,6 +59,11 @@
 
 .sheet.prophecy .rollable {
   cursor: pointer;
+  color: #440011;
+}
+
+.sheet.prophecy .rollable:hover {
+  cursor: pointer;
   color: #992233;
 }
 
@@ -158,6 +163,9 @@
 
 .sheet.prophecy input[type=checkbox] {
   margin: 0 2px;
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
 }
 
 .sheet.prophecy .blessure {
@@ -168,8 +176,52 @@
   display: flex;
 }
 
+.sheet.prophecy .cercles-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .sheet.prophecy h3 .item-controls {
   float: right;
   margin-right: 0.5em;
   font-size: 0.9em;
+}
+
+li.tendance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0.4em;
+  padding: 0.4em 0.2em;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+li.tendance.dragon {
+  border: 4px solid #992233;
+  color: #992233;
+}
+
+li.tendance.humanisme {
+  border: 4px solid #223399;
+  color: #223399;
+}
+
+li.tendance.fatalite {
+  border: 4px solid #223322;
+  color: #223322;
+}
+
+.sheet.prophecy .tendance-container {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.sheet.prophecy .tendance-container input {
+  max-width: 3em;
+}
+    
+.sheet.prophecy .cercles-container {
+  display: flex;
+  justify-content: center;
 }
