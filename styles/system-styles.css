@@ -46,6 +46,12 @@
   text-transform: uppercase;
 }
 
+.sheet.prophecy .item-header .item-controls {
+  background-color: #003c1e;
+  color: white;
+  padding-right: 1em;
+}
+
 .sheet.prophecy.actor form {
   background-color: white;
   padding: 1em;
@@ -147,4 +153,5 @@
 
 .sheet.prophecy .competences-add {
   text-align: center;
+  width: 100%;
 }

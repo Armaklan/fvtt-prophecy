@@ -1,6 +1,15 @@
 <ol class="items-list">
     <li class="flexrow item-header arme">
         <h3 class="item-name flexrow">Armes</h3>
+        <div class="item-controls">
+            <a
+                class="item-control item-create"
+                title="Ajouter une arme"
+                data-type="arme"
+            >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </li>
     {{#each armes as |item id|}}
     <li
@@ -33,6 +42,15 @@
 
     <li class="flexrow item-header armure">
         <h3 class="item-name flexrow">Armures</h3>
+        <div class="item-controls">
+            <a
+                class="item-control item-create"
+                title="Ajouter une armure"
+                data-type="armure"
+            >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </li>
     {{#each armures as |item id|}}
     <li
@@ -59,6 +77,15 @@
 
     <li class="flexrow item-header objet">
         <h3 class="item-name flexrow">Objets diverses</h3>
+        <div class="item-controls">
+            <a
+                class="item-control item-create"
+                title="Ajouter un objet"
+                data-type="objet"
+            >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </li>
     {{#each objets as |item id|}}
     <li

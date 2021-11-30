@@ -1,6 +1,15 @@
 <ol class="items-list">
     <li class="flexrow item-header avantages">
         <h3 class="item-name flexrow">Avantages</h3>
+        <div class="item-controls">
+            <a
+                class="item-control item-create"
+                title="Ajouter un avantage"
+                data-type="avantage"
+            >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </li>
     {{#each avantages as |item id|}}
     <li
@@ -27,6 +36,15 @@
 
     <li class="flexrow item-header avantages">
         <h3 class="item-name flexrow">Desavantage</h3>
+        <div class="item-controls">
+            <a
+                class="item-control item-create"
+                title="Ajouter un désavantage"
+                data-type="desavantage"
+            >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </li>
     {{#each desavantages as |item id|}}
     <li
@@ -52,7 +70,16 @@
     {{/each}}
 
     <li class="flexrow item-header avantages">
-        <h3 class="item-name flexrow">Dons</h3>
+        <h3 class="item-name flexrow">Privilèges</h3>
+        <div class="item-controls">
+            <a
+                class="item-control item-create"
+                title="Ajouter un privilège"
+                data-type="don"
+            >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </li>
     {{#each dons as |item id|}}
     <li
@@ -79,6 +106,15 @@
     
     <li class="flexrow item-header techniques">
         <h3 class="item-name flexrow">Techniques</h3>
+        <div class="item-controls">
+            <a
+                class="item-control item-create"
+                title="Ajouter une technique"
+                data-type="technique"
+            >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </li>
     {{#each techniques as |item id|}}
     <li

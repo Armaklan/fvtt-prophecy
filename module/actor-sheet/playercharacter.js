@@ -53,6 +53,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
 
     html.find(".sphere-name").click((event) => this.onMagicRoll(event));
 
+    html.find(".item-create").on("click", this._onItemCreate.bind(this));
     html.find(".item-test").on("click", this._onItemTest.bind(this));
     html.find(".item-delete").on("click", this._onItemDelete.bind(this));
     html.find(".item-edit").on("click", this._onItemEdit.bind(this));
@@ -66,6 +67,23 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
       .on("click", this._onSkillDelete.bind(this));
     html.find(".sort-test").on("click", this._onSortTest.bind(this));
     if (!this.isEditable) return;
+  }
+
+  _onItemCreate(event) {
+    console.log("Prophecy | Create item", event);
+    event.preventDefault();
+    const dataset = event.currentTarget.dataset;
+    const type = dataset.type;
+    const itemData = {
+      name: `Nouveau ${type}`,
+      img: `systems/fvtt-prophecy/icons/${type}.jpg`,
+      type: type,
+      data: duplicate(dataset),
+    };
+    // Remove the type from the dataset since it's in the itemData.type prop.
+    delete itemData.data.type;
+
+    return this.actor.createOwnedItem(itemData);
   }
 
   async _onSkillDelete(event) {
