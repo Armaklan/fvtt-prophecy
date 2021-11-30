@@ -2,3 +2,8 @@ FVTT Prophecy
 =============
 
 Système de jeu Prophecy pour FoundryVTT.
+
+Pour installer ce plugin, copier l'url suivante dans foundry : 
+```
+https://raw.githubusercontent.com/Armaklan/fvtt-prophecy/master/system.json
+```
