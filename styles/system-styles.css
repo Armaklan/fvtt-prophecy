@@ -155,3 +155,21 @@
   text-align: center;
   width: 100%;
 }
+
+.sheet.prophecy input[type=checkbox] {
+  margin: 0 2px;
+}
+
+.sheet.prophecy .blessure {
+  margin-bottom: 4px;
+}
+
+.sheet.prophecy .blessures-container {
+  display: flex;
+}
+
+.sheet.prophecy h3 .item-controls {
+  float: right;
+  margin-right: 0.5em;
+  font-size: 0.9em;
+}

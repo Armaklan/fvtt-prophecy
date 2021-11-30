@@ -35,7 +35,22 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
 
     console.debug("Prophecy | Sheet data", sheetData);
 
+    sheetData.displayBlessures = this._prepareBlessure(sheetData);
+
     return sheetData;
+  }
+
+  _prepareBlessure(sheetData) {
+    const data = sheetData.data.data;
+    const blessures = data.blessures;
+    return Object.keys(blessures).map((key) => ({
+      ...blessures[key],
+      key,
+      checkbox: new Array(blessures[key].max).fill("").map((v, i) => ({
+        id: i,
+        checked: i < blessures[key].value,
+      })),
+    }));
   }
 
   /** @override */
@@ -57,6 +72,10 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     html.find(".item-test").on("click", this._onItemTest.bind(this));
     html.find(".item-delete").on("click", this._onItemDelete.bind(this));
     html.find(".item-edit").on("click", this._onItemEdit.bind(this));
+    html.find(".blessure-check").on("click", this._onBlessureCheck.bind(this));
+    html
+      .find(".config-blessure")
+      .on("click", this._onConfigBlessure.bind(this));
     html
       .find(".item h4.item-name")
       .on("click", (event) => this._onItemSummary(event));
@@ -67,6 +86,39 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
       .on("click", this._onSkillDelete.bind(this));
     html.find(".sort-test").on("click", this._onSortTest.bind(this));
     if (!this.isEditable) return;
+  }
+
+  _onBlessureCheck(event) {
+    console.log("Prophecy | On blessure check", event);
+    event.preventDefault();
+
+    const dataset = event.currentTarget.dataset;
+    const keyBlessure = dataset.blessure;
+    const keyBox = dataset.box;
+
+    const displayBlessures = this._prepareBlessure(this.actor);
+    const updatedBlessures = displayBlessures.map(b => {
+      if(b.key !== keyBlessure) return b;
+      
+      b.checkbox[keyBox].checked = !b.checkbox[keyBox].checked;
+      b.value = b.checkbox.filter(box => box.checked).length;
+
+      return b;
+    }).reduce((prev, curr) => {
+      prev[curr.key] = {
+        min: curr.min,
+        max: curr.max,
+        value: curr.value,
+        label: curr.label
+      };
+      return prev;
+    }, {});
+
+    
+    const data = { data: {} };
+    data.data.blessures = updatedBlessures;
+
+    this.actor.update(data);
   }
 
   _onItemCreate(event) {
@@ -84,6 +136,50 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     delete itemData.data.type;
 
     return this.actor.createOwnedItem(itemData);
+  }
+
+  async _onConfigBlessure(event) {
+    console.log("Prophecy | Config des blessures", event);
+    event.preventDefault();
+
+    const template =
+      "systems/fvtt-prophecy/templates/dialog/config-blessure.html";
+    const blessures = this.actor.data.data.blessures;
+    const dialogData = {
+      blessures,
+    };
+    const html = await renderTemplate(template, dialogData);
+
+    return new Promise((resolve) => {
+      new Dialog({
+        title: "Configurer les blessures",
+        content: html,
+        buttons: {
+          std: {
+            label: "Sauvegarder",
+            callback: (html) => {
+              const dialogData = html[0].querySelector("form");
+
+              const updatedBlessures = Object.keys(blessures).reduce(
+                (prev, key) => {
+                  prev[key] = { ...blessures[key], max: dialogData[key].value };
+                  return prev;
+                },
+                {}
+              );
+
+              const data = { data: {} };
+              data.data.blessures = updatedBlessures;
+
+              this.actor.update(data);
+            },
+          },
+        },
+        close: (html) => {
+          resolve();
+        },
+      }).render(true);
+    });
   }
 
   async _onSkillDelete(event) {

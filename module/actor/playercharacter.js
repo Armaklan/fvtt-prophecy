@@ -3,5 +3,5 @@ export class ActorProphecyPlayerCharacter extends Actor {
   prepareData() {
     super.prepareData();
   }
-
+  
 }

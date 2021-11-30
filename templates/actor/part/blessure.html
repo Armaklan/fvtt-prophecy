@@ -1,23 +1,32 @@
 <div>
-    <h3>Blessures</h3>
+    <h3>
+        Blessures
+        <div class="item-controls">
+            <a
+                class="item-control config-blessure"
+                title="Configurer les blessures"
+            >
+                <i class="fas fa-cog"></i>
+            </a>
+        </div>
+    </h3>
     <ul class="blessures-scores scores flexrow">
-        {{#each data.data.blessures as |blessure id|}}
+        {{#each displayBlessures as |blessure id|}}
         <li class="blessure">
-            <label>{{ id }}</label>
-            <input
-                class="blessure-score"
-                name="data.blessures.{{id}}.value"
-                type="number"
-                value="{{blessure.value}}"
-                placeholder="3"
-            >
-            <input
-                class="blessure-score"
-                name="data.blessures.{{id}}.max"
-                type="number"
-                value="{{blessure.max}}"
-                placeholder="3"
-            >
+            <label>{{ blessure.label }}</label>
+            <div class="blessures-container">
+                {{#each checkbox as |box id|}}
+                    <input
+                        class="blessure-check"
+                        name="updatedBlessures"
+                        type="checkbox"
+                        {{#if box.checked}} checked {{/if}}
+                        value="{{id}}"
+                        data-blessure="{{blessure.key}}"
+                        data-box="{{box.id}}"
+                    >
+                {{/each}}
+            </div>
         </li>
         {{/each}}
     </ul>

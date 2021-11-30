@@ -17,6 +17,7 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/fvtt-prophecy/templates/dialog/roll.html",
     "systems/fvtt-prophecy/templates/dialog/roll-magie.html",
     "systems/fvtt-prophecy/templates/dialog/add-comp.html",
+    "systems/fvtt-prophecy/templates/dialog/config-blessure.html",
   ];
 
   // Load the template parts
