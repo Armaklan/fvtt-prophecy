@@ -2,17 +2,53 @@
   "name": "fvtt-prophecy",
   "title": "Prophecy",
   "description": "Système pour le jeu de rôle Prophecy V2.",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "templateVersion": 2,
   "author": "Lionel ZUBER",
   "esmodules": ["module/prophecy.js"],
   "styles": ["styles/system-styles.css"],
-  "packs": [],
   "socket": false,
   "initiative": "1d10",
   "gridDistance": 5,
   "gridUnits": "ft",
   "url": "https://github.com/Armaklan/fvtt-prophecy",
   "manifest": "https://raw.githubusercontent.com/Armaklan/fvtt-prophecy/master/system.json",
-  "download": "https://github.com/Armaklan/fvtt-prophecy/archive/1.0.9.zip"
+  "download": "https://github.com/Armaklan/fvtt-prophecy/archive/1.1.0.zip",
+  "packs": [
+    {
+      "name": "avantages",
+      "label": "Prophecy - Avantages",
+      "path": "pack/avantages.db",
+      "module": "fvtt-prophecy",
+      "entity": "Item"
+    },
+    {
+      "name": "desavantages",
+      "label": "Prophecy - Desavantages",
+      "path": "pack/desavantages.db",
+      "module": "fvtt-prophecy",
+      "entity": "Item"
+    },
+    {
+      "name": "don",
+      "label": "Prophecy - Privileges",
+      "path": "pack/don.db",
+      "module": "fvtt-prophecy",
+      "entity": "Item"
+    },
+    {
+      "name": "technique",
+      "label": "Prophecy - Techniques",
+      "path": "pack/technique.db",
+      "module": "fvtt-prophecy",
+      "entity": "Item"
+    },
+    {
+      "name": "benefice",
+      "label": "Prophecy - Bénéfices",
+      "path": "pack/benefice.db",
+      "module": "fvtt-prophecy",
+      "entity": "Item"
+    }
+  ]
 }

@@ -5,11 +5,18 @@
         <label>{{ id }}</label>
         <input
             class="blessure-score"
-            name="{{id}}"
+            name="{{id}}.max"
             type="number"
             value="{{blessure.max}}"
             placeholder="3"
             data-dtype="Number"
+        >
+        <input
+            class="blessure-seuil"
+            name="{{id}}.seuil"
+            type="text"
+            value="{{blessure.seuil}}"
+            data-dtype="Text"
         >
     </div>
     {{/each}}

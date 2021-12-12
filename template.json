@@ -560,30 +560,35 @@
           "blessures": {
             "egratignure": {
               "label": "Egratignure",
+              "seuil": "1-10",
               "value": 0,
               "min": 0,
               "max": 5
             },
             "legere": {
               "label": "Légère (-1)",
+              "seuil": "11-20",
               "value": 0,
               "min": 0,
               "max": 5
             },
             "grave": {
               "label": "Grave (-3)",
+              "seuil": "21-30",
               "value": 0,
               "min": 0,
               "max": 3
             },
             "fatale": {
               "label": "Fatale (-5)",
+              "seuil": "31-40",
               "value": 0,
               "min": 0,
               "max": 2
             },
             "mort": {
               "label": "Mort",
+              "seuil": "41+",
               "value": 0,
               "min": 0,
               "max": 1

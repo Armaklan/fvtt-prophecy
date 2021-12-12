@@ -6,7 +6,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["sheet", "actor", "prophecy"],
       template: "systems/fvtt-prophecy/templates/actor/playercharacter.html",
-      width: 850,
+      width: 900,
       height: 750,
       tabs: [
         {
@@ -134,6 +134,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
           max: curr.max,
           value: curr.value,
           label: curr.label,
+          seuil: curr.seuil
         };
         return prev;
       }, {});
@@ -218,7 +219,11 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
 
               const updatedBlessures = Object.keys(blessures).reduce(
                 (prev, key) => {
-                  prev[key] = { ...blessures[key], max: +dialogData[key].value };
+                  prev[key] = {
+                    ...blessures[key],
+                    max: +dialogData[`${key}.max`].value,
+                    seuil: dialogData[`${key}.seuil`].value,
+                  };
                   return prev;
                 },
                 {}

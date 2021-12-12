@@ -12,21 +12,24 @@
     </h3>
     <ul class="blessures-scores scores flexrow">
         {{#each displayBlessures as |blessure id|}}
-        <li class="blessure">
-            <label>{{ blessure.label }}</label>
-            <div class="blessures-container">
-                {{#each checkbox as |box id|}}
-                    <input
-                        class="blessure-check"
-                        name="updatedBlessures"
-                        type="checkbox"
-                        {{#if box.checked}} checked {{/if}}
-                        value="{{id}}"
-                        data-blessure="{{blessure.key}}"
-                        data-box="{{box.id}}"
-                    >
-                {{/each}}
-            </div>
+          {{#if (gt blessure.max 0)}}
+            <li class="blessure">
+                <label class="blessure-label">{{ blessure.label }}</label>
+                <div class="blessures-container">
+                    {{#each checkbox as |box id|}}
+                        <input
+                            class="blessure-check"
+                            name="updatedBlessures"
+                            type="checkbox"
+                            {{#if box.checked}} checked {{/if}}
+                            value="{{id}}"
+                            data-blessure="{{blessure.key}}"
+                            data-box="{{box.id}}"
+                        >
+                    {{/each}}
+                </div>
+                <label class="blessure-seuil">{{ blessure.seuil }}</label>
+            {{/if}}
         </li>
         {{/each}}
     </ul>

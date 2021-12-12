@@ -170,10 +170,26 @@
 
 .sheet.prophecy .blessure {
   margin-bottom: 4px;
+  justify-content: space-between;
+}
+
+.sheet.prophecy .scores > li.blessure label.blessure-seuil {
+  flex: none;
+  width: 37px;
+}
+
+.sheet.prophecy .scores > li.blessure label.blessure-label {
+  flex: none;
+  width: 72px;
+}
+
+.sheet.prophecy .blessure {
+  margin-bottom: 4px;
 }
 
 .sheet.prophecy .blessures-container {
   display: flex;
+  flex: auto;
 }
 
 .sheet.prophecy .cercles-container {
