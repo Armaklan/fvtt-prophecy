@@ -308,7 +308,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     const discipline = dataset.discipline;
     const attributSelector = `@disciplines.${discipline}.value`;
     const elementSelector = `@spheres.${sphere}.value`;
-    const rollFormula = `1d10+${attributSelector}+${elementSelector}`;
+    const rollFormula = `1d10x+${attributSelector}+${elementSelector}`;
     this._roll(this.actor, "Sortilege", rollFormula);
   }
 
@@ -428,7 +428,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
             callback: (html) => {
               const dialogData = html[0].querySelector("form");
               const attributSelector = `@disciplines.${dialogData.discipline.value}.value`;
-              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              const rollFormula = `1d10x+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
               this._roll(actor, name, rollFormula);
             },
           },
@@ -437,7 +437,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
             callback: (html) => {
               const dialogData = html[0].querySelector("form");
               const attributSelector = `@disciplines.${dialogData.discipline.value}.value`;
-              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              const rollFormula = `1d10x+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
               this._rollTendance(actor, name, rollFormula);
             },
           },
@@ -467,7 +467,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
             callback: (html) => {
               const dialogData = html[0].querySelector("form");
               const attributSelector = `@attributs.${dialogData.attribut.value}.value`;
-              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              const rollFormula = `1d10x+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
               this._roll(actor, name, rollFormula);
             },
           },
@@ -476,7 +476,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
             callback: (html) => {
               const dialogData = html[0].querySelector("form");
               const attributSelector = `@attributs.${dialogData.attribut.value}.value`;
-              const rollFormula = `1d10+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
+              const rollFormula = `1d10x+${attributSelector}+${elementSelector}+${dialogData.modificateur.value}`;
               this._rollTendance(actor, name, rollFormula);
             },
           },
