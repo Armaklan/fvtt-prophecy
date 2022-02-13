@@ -192,7 +192,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.data.type;
 
-    return this.actor.createOwnedItem(itemData);
+    return this.actor.createEmbeddedDocuments("Items", itemData);
   }
 
   async _onConfigBlessure(event) {
@@ -321,7 +321,8 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
 
     const rollFormula = `${dommage}+(@caracteristiques.force.value*${multiplicateur})`;
     const roll = new Roll(rollFormula, this.actor.data.data);
-    roll.roll().toMessage({
+    const rollEvaluation = await roll.evaluate({async: true});
+    rollEvaluation.toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `Dommage`,
     });
@@ -333,8 +334,8 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     const li = event.currentTarget.closest(".item");
     const itemid = li.dataset.itemId;
 
-    const item = this.actor.getOwnedItem(itemid);
-    await this.actor.deleteOwnedItem(itemid);
+    const item = this.actor.items.get(itemid);
+    await this.actor.deleteEmbeddedDocuments("Item", itemid);
   }
 
   async _onItemEdit(event) {
@@ -342,15 +343,15 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     event.preventDefault();
     const li = event.currentTarget.closest(".item");
     const itemId = li.dataset.itemId;
-    const item = this.actor.getOwnedItem(itemId);
+    const item = this.actor.items.get(itemId);
     item.sheet.render(true);
   }
 
   async _onItemSummary(event) {
     event.preventDefault();
     const li = $(event.currentTarget).parents(".item");
-    const item = this.actor.getOwnedItem(li.data("item-id"));
-    const chatData = item.getChatData({ secrets: this.actor.owner });
+    const item = this.actor.items.get(li.data("item-id"));
+    const chatData = item.getChatData({ secrets: this.actor.isOwner });
 
     // Toggle summary
     if (li.hasClass("expanded")) {
@@ -490,7 +491,8 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
 
   _roll(actor, name, rollFormula) {
     const roll = new Roll(rollFormula, this.actor.data.data);
-    roll.roll().toMessage({
+    const rollEvaluation = await roll.evaluate({async: true});
+    rollEvaluation.toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `${name}`,
     });
