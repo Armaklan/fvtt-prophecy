@@ -491,7 +491,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
 
   _roll(actor, name, rollFormula) {
     const roll = new Roll(rollFormula, this.actor.data.data);
-    const rollEvaluation = await roll.evaluate({async: true});
+    const rollEvaluation = roll.evaluate({async: false});
     rollEvaluation.toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `${name}`,

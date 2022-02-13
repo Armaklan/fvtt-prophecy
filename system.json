@@ -2,7 +2,7 @@
   "name": "fvtt-prophecy",
   "title": "Prophecy",
   "description": "Système pour le jeu de rôle Prophecy V2.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "templateVersion": 2,
   "author": "Lionel ZUBER",
   "esmodules": ["module/prophecy.js"],
@@ -13,7 +13,7 @@
   "gridUnits": "ft",
   "url": "https://github.com/Armaklan/fvtt-prophecy",
   "manifest": "https://raw.githubusercontent.com/Armaklan/fvtt-prophecy/master/system.json",
-  "download": "https://github.com/Armaklan/fvtt-prophecy/archive/1.1.1.zip",
+  "download": "https://github.com/Armaklan/fvtt-prophecy/archive/1.1.2.zip",
   "packs": [
     {
       "name": "avantages",
