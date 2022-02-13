@@ -335,7 +335,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     const itemid = li.dataset.itemId;
 
     const item = this.actor.items.get(itemid);
-    await this.actor.deleteEmbeddedDocuments("Item", itemid);
+    await this.actor.deleteEmbeddedDocuments("Item", [itemid]);
   }
 
   async _onItemEdit(event) {
