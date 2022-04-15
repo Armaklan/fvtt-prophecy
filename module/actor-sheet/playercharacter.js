@@ -192,7 +192,7 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.data.type;
 
-    return this.actor.createEmbeddedDocuments("Items", itemData);
+    return this.actor.createEmbeddedDocuments("Item", [itemData]);
   }
 
   async _onConfigBlessure(event) {
@@ -499,15 +499,15 @@ export class ActorSheetProphecyPlayerCharacter extends ActorSheet {
   }
 
   _rollTendance(actor, name, rollFormula) {
-    new Roll(rollFormula, this.actor.data.data).roll().toMessage({
+    new Roll(rollFormula, this.actor.data.data).evaluate({async: false}).toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `${name} - Dragon`,
     });
-    new Roll(rollFormula, this.actor.data.data).roll().toMessage({
+    new Roll(rollFormula, this.actor.data.data).evaluate({async: false}).toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `${name} - Humanisme`,
     });
-    new Roll(rollFormula, this.actor.data.data).roll().toMessage({
+    new Roll(rollFormula, this.actor.data.data).evaluate({async: false}).toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `${name} - Fatalité`,
     });
