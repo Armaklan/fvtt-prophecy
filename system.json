@@ -1,10 +1,18 @@
 {
-  "name": "fvtt-prophecy",
+  "id": "fvtt-prophecy",
   "title": "Prophecy",
   "description": "Système pour le jeu de rôle Prophecy V2.",
-  "version": "1.1.3",
-  "templateVersion": 2,
-  "author": "Lionel ZUBER",
+  "version": "1.2.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10.291"
+  },
+  "authors": [
+    {
+      "name": "ZUBER Lionel",
+      "email": "lionel.zuber@armaklan.org"
+    }
+  ],
   "esmodules": ["module/prophecy.js"],
   "styles": ["styles/system-styles.css"],
   "socket": false,
@@ -13,10 +21,11 @@
   "gridUnits": "ft",
   "url": "https://github.com/Armaklan/fvtt-prophecy",
   "manifest": "https://raw.githubusercontent.com/Armaklan/fvtt-prophecy/master/system.json",
-  "download": "https://github.com/Armaklan/fvtt-prophecy/archive/1.1.3.zip",
+  "download": "https://github.com/Armaklan/fvtt-prophecy/archive/1.2.0.zip",
   "packs": [
     {
       "name": "avantages",
+      "system": "fvtt-prophecy",
       "label": "Prophecy - Avantages",
       "path": "pack/avantages.db",
       "module": "fvtt-prophecy",
@@ -24,6 +33,7 @@
     },
     {
       "name": "desavantages",
+      "system": "fvtt-prophecy",
       "label": "Prophecy - Desavantages",
       "path": "pack/desavantages.db",
       "module": "fvtt-prophecy",
@@ -31,6 +41,7 @@
     },
     {
       "name": "don",
+      "system": "fvtt-prophecy",
       "label": "Prophecy - Privileges",
       "path": "pack/don.db",
       "module": "fvtt-prophecy",
@@ -38,6 +49,7 @@
     },
     {
       "name": "technique",
+      "system": "fvtt-prophecy",
       "label": "Prophecy - Techniques",
       "path": "pack/technique.db",
       "module": "fvtt-prophecy",
@@ -45,6 +57,7 @@
     },
     {
       "name": "benefice",
+      "system": "fvtt-prophecy",
       "label": "Prophecy - Bénéfices",
       "path": "pack/benefice.db",
       "module": "fvtt-prophecy",
